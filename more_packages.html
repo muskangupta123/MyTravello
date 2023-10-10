@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Destinations - Tourly</title>
+    <!-- Add your CSS styling here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .package-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            overflow-x: auto; /* Allow horizontal scrolling if packages don't fit */
+        }
+
+        .package-card {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0 10px; /* Adjust margin for spacing between cards */
+            width: calc(100% - 75px); /* 33.33% width with margin */
+            box-sizing: border-box;
+        }
+
+        .card-banner img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-rating ion-icon {
+            color: blue;
+        }
+
+        .card-subtitle a,
+        .card-title a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .card-subtitle a:hover,
+        .card-title a:hover {
+            color: #e74c3c;
+        }
+
+        .card-text {
+            color: #666;
+        }
+
+        .btn-secondary,
+        .btn-primary {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover,
+        .btn-primary:hover {
+            background-color: #e74c3c;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="package" id="package">
+        <div class="container">
+
+            <p class="section-subtitle">Popular Packages</p>
+
+            <h2 class="h2 section-title">Checkout Our Packages</h2>
+
+            <p class="section-text">
+                Embark on a journey of discovery and adventure. From pristine beaches to ancient wonders, travel unveils the
+                extraordinary tapestry of our world.
+            </p>
+
+            <ul class="package-list">
+
+                <li>
+                    <div class="package-card">
+
+                        <figure class="card-banner">
+                            <img src="./assets/images/packege-1.jpg" alt="Experience The Great Holiday On Beach"
+                                loading="lazy">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <h3 class="h3 card-title">Experience The Great Holiday On Beach</h3>
+
+                            <p class="card-text">
+                                Embark on a journey of discovery and adventure. From pristine beaches to ancient wonders,
+                                travel unveils the extraordinary tapestry of our world.
+                            </p>
+
+                            <ul class="card-meta-list">
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="time"></ion-icon>
+
+                                        <p class="text">7D/6N</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="people"></ion-icon>
+
+                                        <p class="text">pax: 10</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="location"></ion-icon>
+
+                                        <p class="text">Malaysia</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-price">
+
+                            <div class="wrapper">
+
+                                <p class="reviews">(25 reviews)</p>
+
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+
+                            </div>
+
+                            <p class="price">
+                                $750
+                                <span>/ per person</span>
+                            </p>
+
+                            <button class="btn btn-secondary" onclick="window.location.href='booknow.html';">Book Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="package-card">
+
+                        <figure class="card-banner">
+                            <img src="./assets/images/packege-2.jpg" alt="Summer Holiday To The Oxolotan River"
+                                loading="lazy">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <h3 class="h3 card-title">Summer Holiday To The Oxolotan River</h3>
+
+                            <p class="card-text">
+                                Embark on a journey of discovery and adventure. From pristine beaches to ancient wonders,
+                                travel unveils the extraordinary tapestry of our world.
+                            </p>
+
+                            <ul class="card-meta-list">
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="time"></ion-icon>
+
+                                        <p class="text">7D/6N</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="people"></ion-icon>
+
+                                        <p class="text">pax: 10</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="location"></ion-icon>
+
+                                        <p class="text">Malaysia</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-price">
+
+                            <div class="wrapper">
+
+                                <p class="reviews">(20 reviews)</p>
+
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+
+                            </div>
+
+                            <p class="price">
+                                $520
+                                <span>/ per person</span>
+                            </p>
+
+                            <button class="btn btn-secondary" onclick="window.location.href='booknow.html';">Book Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </li>
+
+                <li>
+                    <div class="package-card">
+
+                        <figure class="card-banner">
+                            <img src="./assets/images/packege-3.jpg" alt="Santorini Island's Weekend Vacation"
+                                loading="lazy">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <h3 class="h3 card-title">Santorini Island's Weekend Vacation</h3>
+
+                            <p class="card-text">
+                                Embark on a journey of discovery and adventure. From pristine beaches to ancient wonders,
+                                travel unveils the extraordinary tapestry of our world.
+                            </p>
+
+                            <ul class="card-meta-list">
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="time"></ion-icon>
+
+                                        <p class="text">7D/6N</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="people"></ion-icon>
+
+                                        <p class="text">pax: 10</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <ion-icon name="location"></ion-icon>
+
+                                        <p class="text">Malaysia</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-price">
+
+                            <div class="wrapper">
+
+                                <p class="reviews">(40 reviews)</p>
+
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+
+                            </div>
+
+                            <p class="price">
+                                $660
+                                <span>/ per person</span>
+                            </p>
+
+                            <button class="btn btn-secondary" onclick="window.location.href='booknow.html';">Book Now
+                            </button>
+
+                        </div>
+
+                    </div>
+                </li>
+
+            </ul>
+
+    
+
+        </div>
+    </section>
+</body>
+
+</html>

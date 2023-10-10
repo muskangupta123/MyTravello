@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Us - Tourly</title>
+
+   <style>
+      body {
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f4f4; /* Set a background color for the body */
+      }
+
+      .container {
+         max-width: 800px;
+         margin: 0 auto;
+         padding: 20px;
+      }
+
+      .cta-content {
+         text-align: center;
+      }
+
+      .section-subtitle {
+         color: #3498db;
+         font-size: 18px;
+      }
+
+      .section-title {
+         color: #333;
+         font-size: 36px;
+         margin: 10px 0;
+      }
+
+      .section-text {
+         color: #666;
+         font-size: 16px;
+         margin-bottom: 20px;
+      }
+
+      form {
+         text-align: left;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 8px;
+         color: #333;
+      }
+
+      input,
+      textarea {
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 15px;
+         border: 1px solid #ccc;
+         border-radius: 4px;
+         font-size: 1em;
+      }
+
+      button {
+         background-color: #3498db;
+         color: #fff;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         font-size: 1.2em;
+         transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+         background-color: #2980b9;
+      }
+   </style>
+</head>
+<body>
+
+   <section class="cta" id="contact">
+      <div class="container">
+         <div class="cta-content">
+            <p class="section-subtitle">Call To Action</p>
+            <h2 class="h2 section-title">Ready For Unforgettable Travel. Remember Us!</h2>
+            <p class="section-text">
+              Embark on a journey of discovery and adventure.
+            </p>
+         </div>
+
+         <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+         </form>
+      </div>
+   </section>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         const contactForm = document.getElementById('contact-form');
+
+         contactForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
+            // You can add logic to send the form data to your server here
+            console.log('Form data submitted:', data);
+            alert('Form submitted successfully!');
+         });
+      });
+   </script>
+
+</body>
+</html>
