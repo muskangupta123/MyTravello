@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,52 +6,50 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Contact Us - Tourly</title>
-
    <style>
-      body {
-         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       body {
+         font-family: 'Arial', sans-serif;
          margin: 0;
          padding: 0;
-         background-color: #f4f4f4; /* Set a background color for the body */
+         background-color: #e0e0e0; /* Light gray background color */
       }
-
       .container {
          max-width: 800px;
          margin: 0 auto;
          padding: 20px;
+         background-color: #fff; /* White container background */
+         border-radius: 8px; /* Rounded corners */
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
       }
-
       .cta-content {
          text-align: center;
+         padding: 20px;
       }
-
       .section-subtitle {
          color: #3498db;
          font-size: 18px;
       }
-
       .section-title {
          color: #333;
          font-size: 36px;
          margin: 10px 0;
       }
-
       .section-text {
-         color: #666;
+         color: #555;
          font-size: 16px;
          margin-bottom: 20px;
       }
-
       form {
          text-align: left;
+         max-width: 500px;
+         margin: 0 auto;
       }
-
       label {
          display: block;
          margin-bottom: 8px;
          color: #333;
+         font-size: 16px;
       }
-
       input,
       textarea {
          width: 100%;
@@ -59,8 +58,8 @@
          border: 1px solid #ccc;
          border-radius: 4px;
          font-size: 1em;
+         box-sizing: border-box; /* Ensure padding and border are included in width */
       }
-
       button {
          background-color: #3498db;
          color: #fff;
@@ -71,14 +70,17 @@
          font-size: 1.2em;
          transition: background-color 0.3s ease;
       }
-
       button:hover {
          background-color: #2980b9;
+      }
+      .error-message {
+         color: red;
+         font-size: 14px;
+         margin-top: 5px;
       }
    </style>
 </head>
 <body>
-
    <section class="cta" id="contact">
       <div class="container">
          <div class="cta-content">
@@ -88,38 +90,66 @@
               Embark on a journey of discovery and adventure.
             </p>
          </div>
-
          <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
-
+            <div class="error-message" id="name-error"></div>
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
-
+            <div class="error-message" id="email-error"></div>
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Submit</button>
+            <div class="error-message" id="message-error"></div>
+            <button type="submit" id="submit-button">Submit</button>
          </form>
       </div>
    </section>
-
    <script>
       document.addEventListener('DOMContentLoaded', () => {
-         const contactForm = document.getElementById('contact-form');
-
-         contactForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
-
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-
-            // You can add logic to send the form data to your server here
-            console.log('Form data submitted:', data);
-            alert('Form submitted successfully!');
+         const submitButton = document.getElementById('submit-button');
+         submitButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent form submission
+            validateForm();
          });
       });
+      function validateForm() {
+         const nameInput = document.getElementById('name');
+         const emailInput = document.getElementById('email');
+         const messageInput = document.getElementById('message');
+         const nameError = document.getElementById('name-error');
+         const emailError = document.getElementById('email-error');
+         const messageError = document.getElementById('message-error');
+         // Clear existing error messages
+         nameError.textContent = '';
+         emailError.textContent = '';
+         messageError.textContent = '';
+         // Simple validation checks
+         if (nameInput.value.trim() === '') {
+            nameError.textContent = 'Please enter your name.';
+            return;
+         }
+         if (emailInput.value.trim() === '') {
+            emailError.textContent = 'Please enter your email.';
+            return;
+         }
+         // Basic email validation
+         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+         if (!emailRegex.test(emailInput.value.trim())) {
+            emailError.textContent = 'Please enter a valid email address.';
+            return;
+         }
+         if (messageInput.value.trim() === '') {
+            messageError.textContent = 'Please enter your message.';
+            return;
+         }
+         // If all validations pass, you can proceed with form submission
+         const formData = new FormData(document.getElementById('contact-form'));
+         const data = Object.fromEntries(formData);
+         // You can add logic to send the form data to your server here
+         console.log('Form data submitted:', data);
+         alert('Form submitted successfully!');
+         document.getElementById('contact-form').reset(); // Reset the form after submission
+      }
    </script>
-
 </body>
 </html>

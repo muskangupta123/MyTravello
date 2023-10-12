@@ -6,6 +6,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tourly - Travel agancy</title>
+  <script>
+   function showPrompt() {
+  var emailInput = document.querySelector('input[name="email"]');
+  var email = emailInput.value;
+  
+  // Perform validation
+  if (email === "") {
+    alert("Please enter your email");
+    return; // Stop further execution
+  }
+  
+  var message = "Thank you for subscribing! We will send updates to " + email;
+  alert(message);
+
+}
+  </script>
+  <style>
+    .gallery-list {
+       list-style: none;
+       padding: 0;
+       display: grid;
+       grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+       gap: 20px; /* Adjust the gap between images */
+    }
+
+    .gallery-item {
+       opacity: 0;
+       transition: opacity 1s ease-in-out;
+    }
+
+    .gallery-item.show {
+       opacity: 1;
+    }
+ </style>
+
 
   <!-- 
     - favicon
@@ -437,7 +472,7 @@
                   </div>
 
                   <p class="price">
-                    $750
+                    Rs.7500
                     <span>/ per person</span>
                   </p>
 
@@ -510,7 +545,7 @@
                   </div>
 
                   <p class="price">
-                    $520
+                    Rs.5200
                     <span>/ per person</span>
                   </p>
 
@@ -583,7 +618,7 @@
                   </div>
 
                   <p class="price">
-                    $660
+                    Rs.6600
                     <span>/ per person</span>
                   </p>
 
@@ -608,54 +643,65 @@
       <!-- 
         - #GALLERY
       -->
-
       <section class="gallery" id="gallery">
         <div class="container">
-
-          <p class="section-subtitle">Photo Gallery</p>
-
-          <h2 class="h2 section-title">Photo's From Travellers</h2>
-
-          <p class="section-text">
-            Embark on a journey of discovery and adventure. From pristine beaches to ancient wonders, travel unveils the extraordinary tapestry of our world.
-          </p>
-
-          <ul class="gallery-list">
-
-            <li class="gallery-item">
-              <figure class="gallery-image">
-                <img src="./assets/images/gallery-1.jpg" alt="Gallery image">
-              </figure>
-            </li>
-
-            <li class="gallery-item">
-              <figure class="gallery-image">
-                <img src="./assets/images/gallery-2.jpg" alt="Gallery image">
-              </figure>
-            </li>
-
-            <li class="gallery-item">
-              <figure class="gallery-image">
-                <img src="./assets/images/gallery-3.jpg" alt="Gallery image">
-              </figure>
-            </li>
-
-            <li class="gallery-item">
-              <figure class="gallery-image">
-                <img src="./assets/images/gallery-4.jpg" alt="Gallery image">
-              </figure>
-            </li>
-
-            <li class="gallery-item">
-              <figure class="gallery-image">
-                <img src="./assets/images/gallery-5.jpg" alt="Gallery image">
-              </figure>
-            </li>
-
-          </ul>
-
+           <p class="section-subtitle">Photo Gallery</p>
+           <h2 class="h2 section-title">Photo's From Travellers</h2>
+           <p class="section-text">Embark on a journey of discovery and adventure. From pristine beaches to ancient wonders, travel unveils the extraordinary tapestry of our world.</p>
+           <ul class="gallery-list">
+              <li class="gallery-item">
+                 <figure class="gallery-image">
+                    <img src="./assets/images/gallery-1.jpg" alt="Gallery image 1">
+                 </figure>
+              </li>
+              <li class="gallery-item">
+                 <figure class="gallery-image">
+                    <img src="./assets/images/gallery-2.jpg" alt="Gallery image 2">
+                 </figure>
+              </li>
+              <li class="gallery-item">
+                 <figure class="gallery-image">
+                    <img src="./assets/images/gallery-3.jpg" alt="Gallery image 3">
+                 </figure>
+              </li>
+              <li class="gallery-item">
+                 <figure class="gallery-image">
+                    <img src="./assets/images/gallery-4.jpg" alt="Gallery image 4">
+                 </figure>
+              </li>
+              <li class="gallery-item">
+                 <figure class="gallery-image">
+                    <img src="./assets/images/gallery-5.jpg" alt="Gallery image 5">
+                 </figure>
+              </li>
+           </ul>
         </div>
-      </section>
+     </section>
+  
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+           const galleryItems = document.querySelectorAll('.gallery-item');
+  
+           function toggleVisibility() {
+              galleryItems.forEach((item, index) => {
+                 setTimeout(() => {
+                    item.classList.add('show');
+                 }, index * 500); // Adjust the delay (in milliseconds) between each item
+              });
+  
+              setTimeout(() => {
+                 galleryItems.forEach(item => {
+                    item.classList.remove('show');
+                 });
+                 toggleVisibility();
+              }, galleryItems.length * 500);
+           }
+  
+           toggleVisibility();
+        });
+     </script>
+  
+  
 
 
 
@@ -751,9 +797,10 @@
 
           <form action="" class="form-wrapper">
             <input type="email" name="email" class="input-field" placeholder="Enter Your Email" required>
-
-            <button type="submit" class="btn btn-secondary">Subscribe</button>
+            <button type="submit" class="btn btn-secondary" onclick="showPrompt()">Subscribe</button>
           </form>
+
+        
 
         </div>
 
@@ -764,7 +811,7 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; 2022 <a href="">codewithsadee</a>. All rights reserved
+          &copy; 2022 <a href="">codewithsam</a>. All rights reserved
         </p>
 
         <ul class="footer-bottom-list">
