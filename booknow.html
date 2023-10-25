@@ -132,37 +132,45 @@
         }
     </style>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('booking-form');
-
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        try {
-            const response = await fetch('http://localhost:3000/create-booking', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('booking-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Get the current date
+            const currentDate = new Date();
+            
+            // Get the departure date from the form
+            const departureDate = new Date(data.departureDate);
+            
+            // Compare the departure date with the current date
+            if (departureDate < currentDate) {
+                alert('Error: Please select a future departure date.');
+                return;
             }
-
-            const jsonResponse = await response.json();
-            console.log('Success:', jsonResponse);
-            alert('Booking created successfully');
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Error creating booking: ' + error);
-        }
+            
+            try {
+                const response = await fetch('http://localhost:3000/create-booking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const jsonResponse = await response.json();
+                console.log('Success:', jsonResponse);
+                alert('Booking created successfully');
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error creating booking: ' + error);
+            }
+        });
     });
-});
     </script>
 </head>
 <body>
