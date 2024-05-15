@@ -2,6 +2,8 @@
 
 This is a web application that allows users to book travel destinations, hotels, and flights. The app provides a unique and visually appealing interface for users to explore and book their desired travel arrangements.
 
+![image](https://github.com/muskangupta123/MyTravello/assets/116276756/530ebb4b-9a29-48ec-b2fb-ab4f9b236de3)
+
 ## Features
 
 - Browse and book travel destinations
@@ -53,4 +55,4 @@ npm start
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
 
-![image](https://github.com/muskangupta123/MyTravello/assets/116276756/530ebb4b-9a29-48ec-b2fb-ab4f9b236de3)
+
